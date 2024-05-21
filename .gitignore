@@ -1,2 +1,6 @@
 .venv
 **/__pycache__/
+chatbot/__pycache__
+chatbot/chat_gui/__pycache__
+chatbot/spellcheck/__pycache__
+chatbot/substitution/__pycache__

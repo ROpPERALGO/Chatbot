@@ -5,6 +5,7 @@ setup.py
 chatbot/__init__.py
 chatbot/constants.py
 chatbot/mapper.py
+chatbot/tts.py
 chatbot/version.py
 chatbot/chat_gui/__init__.py
 chatbot/local/de/default.template

@@ -4,7 +4,7 @@ import time
 import os
 
 
-def tts(text, lang='en'):
+def tts(text, lang="en"):
     # Create a gTTS object
     tts = gTTS(text=text, lang=lang)
     # Save the audio to a file
@@ -18,9 +18,6 @@ def tts(text, lang='en'):
     pygame.mixer.music.play()
     # Wait until the audio file is done playing
     while pygame.mixer.music.get_busy():
-        time.sleep(0.1)
-    # Stop the mixer
-    pygame.mixer.music.stop()
-    pygame.mixer.quit()
+        time.sleep(1)
     # Remove the audio file after playing
     os.remove(audio_file)

@@ -4,6 +4,8 @@ import requests
 import json
 from os import path
 from functools import partial
+
+from chatbot.tts import tts
 from .substitution import Substitution
 from .spellcheck import SpellChecker
 from . import version
@@ -942,6 +944,7 @@ class Chat(object):
         session.conversation.append_user_message(message)
         response = self._respond(session, message.rstrip("!."))
         session.conversation.append_bot_message(response)
+        tts(response)
         return response
 
     def respond(self, message, session_id="general"):
@@ -981,6 +984,7 @@ class Chat(object):
         :param terminate: Conversation termination command
         """
         print(first_question)
+        tts(first_question)
         input_sentence = ""
         while input_sentence != terminate:
             input_sentence = terminate
